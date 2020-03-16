@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+        <script src="./script.js" async></script>
+        <title>Mix-and-Match</title>
+    </head>
+    <body>
+        <!--navigation - unnecessary right now -
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Choose Game</a></li>
+                <li><a href="#">Restart</a></li>
+                <li><a href="#">Quit</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav> -->
+        <!--first box-->
+         <div class="title">
+            <h1> Mix and Match Game</h1>
+         </div>
+            <!-- <div class="overlay-text visible">Click to Start</div>
+             <div id="game-over-text" class="overlay-text"> GAME OVER
+                    <span class="overlay-text-small">Click to Restart</span>
+             </div>
+             <div id="victory-text" class="overlay-text">VICTORY
+                    <span class="overlay-text-small">Click to Restart</span>
+             </div> -->
+
+            <!--second box-->
+            <div class="game-container">
+                    <div class="game-info">
+                      <div class="time">Time:<span id="time-remaining">100</span></div>
+                      <div class="flip">Flips:<span id="flips">0</span></div>
+                    </div>
+            </div>
+            <!-- cards -->
+            <div class="card-game">
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/Moon1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/moon2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/planet1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/skull1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/skull2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/star1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/star2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/Sun1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/sun2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/Moon1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/moon2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/planet1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/skull1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/skull2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/star1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/star2.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/Sun1.png">
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card-back card-face">
+                                <img class="gen-back" src="./images/100x160_backCard.jpg">
+                            </div>
+                            <div class="card-front card-face">
+                                <img class="card-value" src="./images/sun2.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
