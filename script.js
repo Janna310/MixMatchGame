@@ -13,12 +13,12 @@ class MixOrMatch {
       this.cardToCheck = null;
       this.matchedCards = [];
       this.busy = true;
-      setTimeout(() => { //do we have a timeout function? 
+      setTimeout(() => { //do we want to add a timeout function? pause button
         this.shuffleCards(this.cardsArray);
         this.countdown = this.startCountdown();
         this.busy = false;
       }, 500);
-      this.hideCards(); //where does this come in?
+      this.hideCards();
       this.timer.innerText = this.timeRemaining;
       this.ticker.innerText = this.totalClicks;
     }
