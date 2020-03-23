@@ -1,30 +1,69 @@
-html{
+html {
     min-height: 100vh;
-    font-family: 'Archivo';
+    font-family: "Ranchers", cursive;
     cursor: pointer;
-}
-
-body {
-    margin:0;
-    padding:0;
-    background: radial-gradient(rgb(3, 210, 218), rgb(3, 62, 82));
-}
-
-/* Title */
-.title{
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(rgb(206, 165, 31), rgb(2, 7, 87));
+  }
+  
+  /* Nav Bar  -- not using rn
+  
+  nav{
+      background-color: black;
+      padding: 5px 20px;
+  }
+  
+  ul{
+      list-style-type: none;
+  }
+  a{
+      color:white;
+      text-decoration: none;
+  }
+  a:hover{
+      color: grey;
+      font-size: larger;
+  }
+  
+  .menu{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .bars{
+      background-color: 999;
+      display: inline-block;
+      height: 5px;
+      width:18px;
+      position: relative;
+  } */
+  
+  /* Title */
+  .title {
     display: flex;
     justify-content: center;
-}
-h1{
-	font-size: 50px;
-    font-weight:bold;
-    color: white;
-    text-shadow: 1px 1px 2px black;    
-}
-
-/* page overlays */
-
-.overlay-text{
+  }
+  h1 {
+    font-size: 80px;
+    color: #d87223d7;
+    text-shadow: 1px 1px 2px midnightblue;
+    margin-bottom: 0;
+  }
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    color: rgba(19, 19, 73, 0.788);
+    text-shadow: 1px 1px 2px #d87223d7;
+  }
+  
+  /* page overlays */
+  
+  .overlay-text {
     top: 0;
     left: 0;
     right: 0;
@@ -35,79 +74,73 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 200px;
-    color:purple;
-    text-shadow: 1px 1px 3px black;
+    color: white;
+    transition: background-color 500ms, font-size 500ms;
   }
-
-.overlay-text-small {
-    font-size: .3em;
+  
+  .overlay-text-small {
+    font-size: 0.3em;
   }
-
-.overlay-text.visible{
+  
+  .overlay-text.visible {
     display: flex;
-    flex-direction: column;
     animation: overlay-grow 500ms forwards;
-}
-
-@keyframes overlay-grow{
-    from{
-        background-color: rgba(0, 0, 0, 0);
-        font-size: 0;
+  }
+  
+  @keyframes overlay-grow {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
     }
-    to{
-        font-size: 10em;
-        background-color: rgb(14, 13, 13, 0.75);
+    to {
+      font-size: 10em;
+      background-color: rgb(14, 13, 13, 0.75);
     }
-}
-
-
-/* Time and Flip styling */
-
- .game-container{
-    display:flex;
+  }
+  
+  /* Time and Flip styling */
+  
+  .game-container {
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-.game-info{
+  }
+  
+  .game-info {
     padding-bottom: 40px;
-    display:flex;
+    display: flex;
     justify-content: center;
-    font-size: 30px; 
-    color:white; 
-    text-shadow: 1px 1px 2px black; 
-}
-
-.time{
+    font-size: 30px;
+    color: rgb(209, 184, 184);
+    text-shadow: 1px 1px 2px rgb(37, 4, 100);
+  }
+  
+  .time {
     padding-right: 30px;
-}
-
-
-/* cards */
-
-.card-game{
-    margin: 50px auto;
+  }
+  
+  /* cards */
+  
+  .card-game {
     display: grid;
     grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
     justify-content: center;
     perspective: 500px;
-}
-
-.cards {
+  }
+  
+  .cards { /* what size are the cards*/
     position: relative;
     height: 160px;
     width: 100px;
-}
-
-/* not working 
-.card:hover{
-    cursor:grab;
-} */
-
-.card-face{
+  }
+  /* not working 
+  .card:hover{
+      cursor:grab;
+  } */
+  
+  .card-face {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -120,62 +153,104 @@ h1{
     overflow: hidden;
     transition: transform 500ms ease-in-out;
     backface-visibility: hidden;
-}
+  }
   
-.cards.visible .card-back {
+  .cards.visible .card-back {
     transform: rotateY(-180deg);
-}
+  }
   
-.cards.visible .card-front {
-    transform: rotateY(0); 
-}
-
-/* .cards.matched .card-front .card-value {
+  .cards.visible .card-front { 
+    transform: rotateY(0);
+  }
+  
+  .cards.matched .card-front .cardfront {
     animation: dance 1s linear infinite 500ms;
-} */
-
-.card-back{
+  }
+  
+  .card-back { /*animation isn't reading, needs to be chirpus?*/
     background-color: black;
-    border-color: #FF6D00;
-    transform: rotateY(0); 
-}
-
-/* .card-back:hover{
+    border-color: #11057e;
+    transform: rotateY(0);
+  }
+  
+  .card-back:hover {
     transform: scale(110%);
-} */
+  }
+  
+  .gen-back{
+    z-index: -1;
+  }
 
-.card-value {
-    position: relative;
+  .gen-back:hover{ /* change this animation */
+    position: absolute;
     transition: transform 100ms ease-in-out;
-    transform: scale(.9);
-}
-
-.card-front{
-    background-color:white;
+    transform: scale(0.9);
+  }
+  .chirpus{
+    z-index:1;
+    position: absolute;
+  }
+  
+  .chirpus:hover{ /*Change this animation */
+    transition: transform 100ms ease-in-out;
+    transform: scale(0.9);
+  }
+  
+  .card-front { 
+    background-color: white;
     border-color: #333;
     transform: rotateY(180deg);
-} 
-
-/*adjusting size */
-
-
+  }
+  .card-value {
+    position: absolute;
+    transition: transform 100ms ease-in-out;
+    transform: scale(0.9);
+  }
+  .student{
+    position: absolute;
+    transition: transform 100ms ease-in-out;
+    transform: scale(0.9);
+  }
+  
+  footer {
+    color: #5b5b66;
+    float: right;
+  }
+  
+  @keyframes dance {
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(-30deg);
+    }
+    75% {
+      transform: rotate(30deg);
+    }
+  }
+  
+  /* Size responsive */
+  
   @media (max-width: 650px) {
-    .title{    
-        display: flex;
-        justify-content: center;
+    .title {
+      display: flex;
+      justify-content: center;
     }
-    h1{
-        font-size: 30px;
-        font-weight:bold;
-        color: white;
-        text-shadow: 1px 1px 2px black;    
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
     }
+    /* h2 {
+    } */
     .card-game {
-      grid-template-columns: repeat(3, auto)
+      grid-template-columns: repeat(3, auto);
     }
   
     .cards {
       flex-direction: column;
       align-items: center;
+      height: 160px;
+      width: 100px;
     }
   }
